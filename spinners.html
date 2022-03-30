@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color: black;
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
+        justify-items: center;
+        height: 100vh;
+        display: flex;    
+    }
+    .box2{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: turquoise;
+        position: relative;
+        /* transition: all 3s;   */
+        /* animation: spin 0.5s linear infinite; */
+        animation: animate1 3s infinite ease-in-out;
+        animation-delay: 1.5s;
+    }
+    @keyframes animate1 {
+        25%{
+            background-color: black;
+        }
+    }
+    .box2:after{
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: turquoise;
+        position: absolute;
+        left: 30px;
+        animation: spin1 3s infinite ease-in-out;
+        animation-delay: 1s;
+   }
+    @keyframes spin1 {
+        25%{
+            background-color: black;
+        }
+    }
+    .box2:before{
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: turquoise;
+        position: absolute;
+        left: 60px;
+        animation: spin2 3s infinite ease-in-out;
+        z-index: 2;
+        animation-delay: 0.5s;
+   }
+    @keyframes spin2 {
+        25%{
+            background-color: black;
+        }
+    }
+   
+    .box{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: turquoise;
+        position: relative;
+        /* transition: all 3s;   */
+        /* animation: spin 0.5s linear infinite; */
+        animation: animate2 1s infinite;
+        animation-delay: 0.3s;
+    }
+    @keyframes animate2 {
+        10%{
+            transform: translateY(-30px);
+        }
+    }
+    .box:after{
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: turquoise;
+        position: absolute;
+        left: 30px;
+        bottom:0;
+        animation: spin5 1s infinite;
+        animation-delay: 0.1s;
+   }
+    @keyframes spin5 {
+        5%{
+            transform: translateY(-30px);
+        }
+    }
+    .box:before{
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: turquoise;
+        position: absolute;
+        bottom:0;
+        right: 30px;
+        animation: spin4 1s infinite;
+        z-index: 2;
+        animation-delay: 0.5s;
+   }
+    @keyframes spin4 {
+        10%{
+            transform: translateY(-30px);
+        }
+    }
+   
+  
+
+   .loader {
+  border: 5px solid lightgray; /* Light grey */
+  border-top: 6px solid turquoise; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 0.5s linear infinite;
+  /* transition: all; */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.loader2 {
+  border: 5px solid transparent; /* Light grey */
+  border-top: 6px solid turquoise; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+</style>
+<body>
+    <div class="loader"></div>
+    <div class="loader2"></div>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>
